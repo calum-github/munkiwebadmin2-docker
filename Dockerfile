@@ -23,20 +23,20 @@ RUN apt-get update && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7 && \
     apt-get install -y apt-transport-https ca-certificates
     # Add repository for passenger
-RUN echo deb https://oss-binaries.phusionpassenger.com/apt/passenger jessie main > /etc/apt/sources.list.d/passenger.list && \
+RUN echo deb https://oss-binaries.phusionpassenger.com/apt/passenger jessie main > /etc/apt/sources.list.d/passenger.list
     # Install our packages
-    apt-get update && \
-    apt-get install -y \
+RUN apt-get update
+RUN apt-get install -y \
     nginx-extras \
     passenger \
     python-pip \
     python-dev \
     libpq-dev \
-    pip install Django==1.9.1 && \
+RUN pip install Django==1.9.1
     # Clean up left overs
-    apt-get clean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean 
+RUN apt-get autoremove
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     # Enable Passenger in the nginx config
 RUN sed -i 's/'#\ passenger_root'/passenger_root/g' /etc/nginx/nginx.conf && \
     sed -i 's/'#\ passenger_ruby'/passenger_ruby/g' /etc/nginx/nginx.conf
