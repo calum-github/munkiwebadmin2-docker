@@ -31,7 +31,8 @@ RUN apt-get install -y \
     passenger \
     python-pip \
     python-dev \
-    libpq-dev 
+    libpq-dev \
+    git
 RUN pip install Django==1.9.1
     # Clean up left overs
 RUN apt-get clean 
