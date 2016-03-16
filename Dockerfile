@@ -3,10 +3,12 @@
 # Date:     16-03-2015
 # Notes:   
 
-MAINTAINER Calum Hunter (calum.h@gmail.com)
-
 # Start from Debian 
 FROM debian:jessie
+
+MAINTAINER Calum Hunter (calum.h@gmail.com)
+
+
 
 # Set some environment variables
 ENV HOME /root
