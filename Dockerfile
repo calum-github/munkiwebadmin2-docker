@@ -27,11 +27,11 @@ RUN echo deb https://oss-binaries.phusionpassenger.com/apt/passenger jessie main
     # Install our packages
     apt-get update && \
     apt-get install -y \
-    nginx-extras
-    passenger
-    python-pip 
-    python-dev
-    libpq-dev
+    nginx-extras \
+    passenger \
+    python-pip \
+    python-dev \
+    libpq-dev \
     pip install Django==1.9.1 && \
     # Clean up left overs
     apt-get clean && \
